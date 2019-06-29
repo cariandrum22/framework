@@ -520,7 +520,7 @@ class FreePBXInstallCommand extends Command {
 					$pdodb->query("DROP DATABASE IF EXISTS ".$amp_conf['AMPDBNAME']);
 				}
 				$pdodb->query("CREATE DATABASE IF NOT EXISTS ".$amp_conf['AMPDBNAME']." DEFAULT CHARACTER SET ".$dbencoding." DEFAULT COLLATE ".$dbencoding."_unicode_ci");
-				$sql = "GRANT ALL PRIVILEGES ON ".$amp_conf['AMPDBNAME'].".* TO '" . $amp_conf['AMPDBUSER'] . "'@'".$amp_conf['AMPDBHOST']."' IDENTIFIED BY '" . $amp_conf['AMPDBPASS'] . "'";
+				$sql = "GRANT ALL PRIVILEGES ON ".$amp_conf['AMPDBNAME'].".* TO '" . $amp_conf['AMPDBUSER'] . "'@'%' IDENTIFIED BY '" . $amp_conf['AMPDBPASS'] . "'";
 				$pdodb->query($sql);
 			} else {
 				//check collate
@@ -560,7 +560,7 @@ class FreePBXInstallCommand extends Command {
 					$db->query("DROP DATABASE IF EXISTS ".$amp_conf['CDRDBNAME']);
 				}
 				$db->query("CREATE DATABASE IF NOT EXISTS ".$amp_conf['CDRDBNAME']." DEFAULT CHARACTER SET ".$dbencoding." DEFAULT COLLATE ".$dbencoding."_unicode_ci");
-				$sql = "GRANT ALL PRIVILEGES ON ".$amp_conf['CDRDBNAME'].".* TO '" . $amp_conf['AMPDBUSER'] . "'@'".$amp_conf['AMPDBHOST']."' IDENTIFIED BY '" . $amp_conf['AMPDBPASS'] . "'";
+				$sql = "GRANT ALL PRIVILEGES ON ".$amp_conf['CDRDBNAME'].".* TO '" . $amp_conf['AMPDBUSER'] . "'@'%' IDENTIFIED BY '" . $amp_conf['AMPDBPASS'] . "'";
 				$db->query($sql);
 			} else {
 				//check collate
